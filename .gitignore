@@ -1,3 +1,7 @@
+# parcel and source gnored files
+node_modules/
+.parcel-cache
+dist
 .prettierignore
 .prettierrc
 
