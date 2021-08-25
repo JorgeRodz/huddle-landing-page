@@ -1,0 +1,12 @@
+%heading-default {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  @extend %heading-default;
+  font-weight: 600;
+}
+h2 {
+}
+h3 {
+}
