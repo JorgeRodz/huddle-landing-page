@@ -1,0 +1,21 @@
+html(lang="en")
+  head
+    //- Para que se pueden leer caracteres especiales
+    meta(charset='UTF-8')
+    //- Etiqueta SEO para motores de busqueda
+    meta(name='description' content='Descripcion de nuestra web')
+    //- Etiqueta SEO para robots de busqueda
+    meta(name='robots' content='index, follow')
+    //- Etiqueta necesaria para trabajar con resposive design
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    //- Para agregar compatibilidad con internet explorer
+    meta(http-equiv='X-UA-Compatible' content='ie=edge')
+    //- Titulo del documento
+    title tab title
+  body
+    block header
+      include ./../includes/header
+    block main
+      include ./../includes/main
+    block footer
+      include ./../includes/footer
