@@ -3,17 +3,25 @@
   "version": "1.0.0",
   "description": "Landing page of a social media community",
   "scripts": {
+    "--COMMENT_1-START--": "DEVELOP SCRIPTS",
     "pug:watch": "pug -w ./ -o ./ -P",
     "parcel:serve": "parcel serve ./index.html",
     "nra-dev": "npm-run-all --parallel pug:watch parcel:serve",
+    "--COMMENT_1-END--": "DEVELOP SCRIPTS",
+    "--COMMENT_2-START--": "BUILD SCRIPTS",
     "pug:compile": "pug ./index.pug -P",
     "parcel:build": "parcel build ./index.html",
-    "nra-build": "npm-run-all pug:compile parcel:build"
+    "nra-build": "npm-run-all pug:compile parcel:build",
+    "--COMMENT_2-END--": "BUILD SCRIPTS",
+    "--COMMENT_3-START--": "PUG SCRIPTS",
+    "pug:compile-all": "pug ./ -o ./ -P",
+    "--COMMENT_3-EDN--": "PUG SCRIPTS"
   },
   "keywords": [],
   "author": "Jorge Alberto Rodriguez Flores",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
     "@parcel/transformer-sass": "^2.0.0-beta.3.1",
     "autoprefixer": "^10.2.6",
     "npm-run-all": "^4.1.5",
