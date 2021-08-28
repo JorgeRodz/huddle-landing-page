@@ -4,10 +4,31 @@
   padding: 5rem 8% 3rem 8%;
   text-align: center;
   border-radius: 15px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 8px;
+
+  @include respond(tablet) {
+    height: 47rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 12%;
+    padding-right: 2%;
+  }
+
+  @include respond(tablet) {
+    &:nth-child(2) {
+      .card__img {
+        order: 1;
+      }
+    }
+  }
 
   &:first-child {
     margin-top: 6rem;
+
+    @include respond(tablet) {
+      margin-top: 15rem;
+    }
   }
 
   & > * {
@@ -18,15 +39,27 @@
     margin-bottom: 4rem;
     img {
       width: 100%;
+      @include respond(tablet) {
+        width: 85%;
+      }
     }
   }
-  &__title {
-  }
-  &__p {
-    color: $color-grayish-blue;
+
+  &__text {
+    @include respond(tablet) {
+      text-align: left;
+      flex-basis: 80%;
+    }
+
+    &-title {
+    }
+    &-p {
+      color: $color-grayish-blue;
+    }
   }
 
   &:last-child {
+    height: min-content;
     padding: 5rem 1% 3rem 1%;
     text-align: center;
     margin: 0 5%;
@@ -36,6 +69,14 @@
       font-size: 2.4rem;
       letter-spacing: -1px;
       margin-bottom: 3rem;
+    }
+  }
+
+  @include respond(tablet) {
+    &:last-child {
+      display: block;
+      width: 50%;
+      margin: 0 auto;
     }
   }
 }

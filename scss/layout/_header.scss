@@ -1,8 +1,13 @@
 .header {
-  height: 95vh;
+  height: min-content;
   background-color: $color-pale-cyan;
   padding: 2.5rem 5%;
   background-image: url("../images/bg-hero-mobile.svg");
+
+  @include respond(tablet) {
+    background-image: url("../images/bg-hero-desktop.svg");
+    padding-top: 4rem;
+  }
 
   &__presentation {
     display: flex;
@@ -12,17 +17,34 @@
     img {
       align-self: center;
       width: 12rem;
+
+      @include respond(tablet) {
+        width: 20rem;
+      }
     }
     a {
+      padding: 0.7rem 2.3rem;
+      text-align: center;
       display: inline-block;
       background-color: $color-white;
-      padding: 0.5rem 1.8rem;
       font-size: 1.4rem;
       color: $color-black;
       font-weight: 700;
       text-decoration: none;
-      border-radius: 15px;
-      box-shadow: rgba($color-black, 0.35) 0px 5px 15px;
+      border-radius: 40px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: rgba($color-white, 0.95);
+        transform: translateY(-2px);
+      }
+
+      @include respond(tablet) {
+        width: 19rem;
+        padding: 1.5rem 0;
+      }
     }
   }
 
@@ -30,7 +52,18 @@
     text-align: center;
     padding: 0 8%;
 
+    @include respond(tablet) {
+      display: flex;
+      padding: 0;
+      align-items: center;
+      justify-content: space-between;
+    }
+
     &__info {
+      @include respond(tablet) {
+        text-align: left;
+        flex-basis: 40%;
+      }
       margin-bottom: 6rem;
       &-title {
         margin-bottom: 2rem;
@@ -41,6 +74,9 @@
     }
 
     &__img {
+      @include respond(tablet) {
+        flex-basis: 55%;
+      }
       img {
         width: 100%;
       }

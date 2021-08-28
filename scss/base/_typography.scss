@@ -5,9 +5,13 @@
 
 h1 {
   @extend %heading-default;
+  @include respond(tablet) {
+    font-size: 4.1rem;
+  }
 }
 h2 {
   @extend %heading-default;
+  margin-bottom: 1.4rem;
 }
 h3 {
 }

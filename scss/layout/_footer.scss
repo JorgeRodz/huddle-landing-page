@@ -5,6 +5,10 @@
   padding-bottom: 7rem;
   font-size: 2rem;
 
+  @include respond(tablet) {
+    font-size: 1.8rem;
+  }
+
   .logo {
     width: 50%;
   }
@@ -12,9 +16,19 @@
   .list {
     padding: 0 5%;
 
+    @include respond(tablet) {
+      display: grid;
+      grid-template-columns: 27% repeat(3, 1fr);
+      grid-template-rows: repeat(6, min-content);
+    }
+
     &-item:not(:last-child) {
       display: block;
       margin-bottom: 2.5rem;
+
+      @include respond(tablet) {
+        margin-bottom: 0;
+      }
     }
 
     .info {
@@ -25,6 +39,9 @@
 
       &:nth-child(4) {
         margin-bottom: 6rem;
+        @include respond(tablet) {
+          margin-bottom: 0;
+        }
       }
 
       &__img {
@@ -37,6 +54,11 @@
           margin-right: 3rem;
         }
       }
+
+      @include respond(tablet) {
+        grid-column: 1 / 2;
+        font-size: 1.6rem;
+      }
     }
 
     .socials {
@@ -45,11 +67,29 @@
       justify-content: center;
       gap: 2rem;
       margin-bottom: 2.5rem;
-      i {
+
+      @include respond(tablet) {
+        gap: 1.5rem;
+      }
+
+      a:link,
+      a:visited {
+        text-decoration: none;
+        color: $color-white;
         padding: 1rem;
         font-size: 1.8rem;
         border: 1px solid $color-white;
         border-radius: 50%;
+        transition: all 0.2s;
+
+        @include respond(tablet) {
+          font-size: 1.2rem;
+        }
+
+        &:hover {
+          color: $color-pink;
+          border-color: $color-pink;
+        }
       }
     }
 
@@ -57,6 +97,68 @@
       font-size: 1.5rem;
       display: block;
       text-align: center;
+    }
+
+    @include respond(tablet) {
+      &-item:nth-child(1) {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+
+        margin-bottom: 4rem;
+
+        .logo {
+          width: 17%;
+        }
+      }
+      &-item:nth-child(2) {
+        grid-row: 2 / 4;
+      }
+      &-item:nth-child(4) {
+        grid-column: 1 / -1;
+      }
+      &-item:nth-child(5) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        margin-left: 30%;
+      }
+      &-item:nth-child(6) {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+        margin-left: 30%;
+      }
+      &-item:nth-child(7) {
+        grid-column: 2 / 3;
+        grid-row: 4 / 5;
+        margin-left: 30%;
+      }
+      &-item:nth-child(8) {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+        margin-left: 15%;
+      }
+      &-item:nth-child(9) {
+        grid-column: 3 / 4;
+        grid-row: 3 / 4;
+        margin-left: 15%;
+      }
+      &-item:nth-child(10) {
+        grid-column: 3 / 4;
+        grid-row: 4 / 5;
+        margin-left: 15%;
+      }
+      &-item:nth-child(11) {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        grid-column: 4 / 5;
+        grid-row: 2 / 6;
+        align-self: start;
+        justify-self: start;
+      }
+      &-item:nth-child(12) {
+        grid-column: 4 / 5;
+        margin-top: 3.5rem;
+      }
     }
   }
 }
